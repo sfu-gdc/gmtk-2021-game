@@ -1,8 +1,7 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://src/test/SpriteManager.gd" type="Script" id=1]
 [ext_resource path="res://src/test/Player.gd" type="Script" id=2]
-[ext_resource path="res://src/test/Ground.gd" type="Script" id=3]
 [ext_resource path="res://src/test/MusicPlayer.gd" type="Script" id=4]
 [ext_resource path="res://res/fami-4-festival-loop.wav" type="AudioStream" id=5]
 [ext_resource path="res://src/test/World.gd" type="Script" id=6]
@@ -16,7 +15,7 @@ script = ExtResource( 1 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
-volume_db = -5.724
+volume_db = -9.121
 script = ExtResource( 4 )
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -30,7 +29,6 @@ script = ExtResource( 6 )
 
 [node name="Ground" type="Sprite" parent="World"]
 position = Vector2( 0, 8 )
-script = ExtResource( 3 )
 
 [node name="Player" type="Sprite" parent="World"]
 texture = SubResource( 1 )
