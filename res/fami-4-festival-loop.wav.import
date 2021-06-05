@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/fami-4-festival-loop.wav-87831068c62dc86843416733aaf34391.sample"
+
+[deps]
+
+source_file="res://res/fami-4-festival-loop.wav"
+dest_files=[ "res://.import/fami-4-festival-loop.wav-87831068c62dc86843416733aaf34391.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=true
+edit/loop=true
+compress/mode=0
