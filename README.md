@@ -10,5 +10,3 @@ Game Title: TBD
 4. When you want to combine your changes with the main version, you make a pull request to master and can confirm it right away.
 
 https://github.com/SFU-GDC/gmtk-2021-game/network will be very helpful for visualizing what's happening.
-
-Testing 1 2 3
