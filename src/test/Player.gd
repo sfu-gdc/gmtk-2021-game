@@ -39,6 +39,7 @@ var cur_time = 0
 
 # object properties:
 
+var infinite_jumping = false
 var touching_ground = true
 var jump_time_limit = 0.1 # must wait ~100ms between jumps no matter what
 var jump_timer = 0
@@ -57,7 +58,7 @@ func _ready():
 	body.set_mode(RigidBody2D.MODE_CHARACTER)
 	body.set_position(Vector2(0, -24))
 	
-	self.add_child(body)
+	#self.add_child(body)
 
 # for animations
 func _process(delta):
@@ -66,6 +67,9 @@ func _process(delta):
 		sprite.set_texture(left_anim[anim_step])
 	elif Input.is_action_pressed("ui_right"):
 		sprite.set_texture(right_anim[anim_step])
+		
+	if Input.is_action_just_pressed("ui_home"):
+		infinite_jumping = not infinite_jumping
 		
 	if anim_on:
 		if cur_time >= step_time: # case: update animation frame
@@ -89,7 +93,7 @@ func _physics_process(delta):
 	elif not _physics_is_touching_ground():
 		touching_ground = false
 	
-	if Input.is_action_just_pressed("ui_up") && touching_ground:
+	if Input.is_action_just_pressed("ui_up") && (touching_ground || infinite_jumping):
 		body.apply_central_impulse(Vector2(0, -85))
 		touching_ground = false
 	elif Input.is_action_pressed("ui_left"):

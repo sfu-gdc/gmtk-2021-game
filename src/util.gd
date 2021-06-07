@@ -25,3 +25,15 @@ static func circle_collider(radius):
 
 static func vec_round(vec):
 	return Vector2(round(vec.x), round(vec.y))
+
+# for when treating a list as a matrix
+static func mat2_get(mat_list, width, vec2):
+	return mat_list[vec2.x + width * vec2.y]
+static func mat2_set(mat_list, width, vec2, val):
+	mat_list[vec2.x + width * vec2.y] = val
+
+# inits a list to val.
+static func list_comprehension(list1, list2, val):
+	for x in list2:
+		list1.append(val)
+	return list1
