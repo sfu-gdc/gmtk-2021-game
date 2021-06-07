@@ -2,11 +2,10 @@
 
 [ext_resource path="res://src/test/SpriteManager.gd" type="Script" id=1]
 [ext_resource path="res://src/test/Player.gd" type="Script" id=2]
+[ext_resource path="res://src/test/Camera2D.gd" type="Script" id=3]
 [ext_resource path="res://src/test/MusicPlayer.gd" type="Script" id=4]
 [ext_resource path="res://res/fami-4-festival-loop.wav" type="AudioStream" id=5]
 [ext_resource path="res://src/test/World.gd" type="Script" id=6]
-
-[sub_resource type="AtlasTexture" id=1]
 
 [node name="Sample" type="Node2D"]
 
@@ -21,6 +20,7 @@ script = ExtResource( 4 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 0.125, 0.125 )
+script = ExtResource( 3 )
 
 [node name="World" type="Node2D" parent="."]
 script = ExtResource( 6 )
@@ -28,8 +28,13 @@ script = ExtResource( 6 )
 [node name="Background" type="Sprite" parent="World"]
 
 [node name="Ground" type="Sprite" parent="World"]
-position = Vector2( 0, 8 )
+position = Vector2( 0, 1.294 )
 
-[node name="Player" type="Sprite" parent="World"]
-texture = SubResource( 1 )
+[node name="Interactables" type="Node2D" parent="World"]
+
+[node name="Player" type="Node" parent="World"]
 script = ExtResource( 2 )
+
+[node name="Body" type="RigidBody2D" parent="World/Player"]
+
+[node name="Sprite" type="Sprite" parent="World/Player"]

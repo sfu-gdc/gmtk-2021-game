@@ -3,6 +3,10 @@ extends Node
 const ground_rect = Rect2(3*8, 0, 8, 8)
 const ground2_rect = Rect2(3*8, 1*8, 8, 8)
 const ground3_rect = Rect2(3*8, 2*8, 8, 8)
+const block_rect = Rect2(2*8, 0, 8, 8)
+const block2_rect = Rect2(2*8, 1*8, 8, 8)
+const block3_rect = Rect2(2*8, 2*8, 8, 8)
+const block4_rect = Rect2(2*8, 3*8, 8, 8)
 const background_rect = Rect2(6*8, 0, 16, 16)
 
 var spritesheet = load("res://res/sample_tileset.png")
