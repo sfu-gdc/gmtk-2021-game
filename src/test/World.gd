@@ -32,19 +32,19 @@ var world_map = []
 
 # Block spawing:
 
-var time_to_spawn_block = 1.0 # TODO: need to make this slowly increase, but start small. (need a few bursts & beginning to keep players on their toes.)
+var time_to_spawn_block = 0.25 # TODO: need to make this slowly increase, but start small. (need a few bursts & beginning to keep players on their toes.)
 var block_timer = 0.0
 
 # Prebuilt Functions:
 
 # This class builds the world
 func _ready():
-	rand.seed = 99 # TODO: get this from current time
+	rand.seed = 99+1 # TODO: get this from current time
 	
 	# create background
-	background_ref.position = Vector2(-48, -24)
+	background_ref.position = Vector2(-48-8, -24)
 	for y in range(-map_size.y/2, 4):
-		for x in range(0, map_size.x/2 + 1):
+		for x in range(0, map_size.x/2 + 2):
 			var back_node = Sprite.new()
 			if rand.randi_range(0, 2) == 0:
 				back_node.set_texture(sprite_manager_ref.get_tex(sprite_manager_ref.get("background_rect_pattern")))
@@ -100,10 +100,10 @@ func _process(delta):
 		var dir = null
 		match rand.randi_range(0, 1):
 			0:
-				loc = Vector2(-2, rand.randi_range(4, -24)) * 8 # TODO: only do this around the player's screen.
+				loc = Vector2(-8, rand.randi_range(4, -24)) * 8 # TODO: only do this around the player's screen.
 				dir = "right"
 			1:
-				loc = Vector2(14, rand.randi_range(4, -24)) * 8
+				loc = Vector2(8, rand.randi_range(4, -24)) * 8
 				dir = "left"
 		spawn_block(loc, dir) # TODO: (LOW) eventually, start spawning multiple blocks at the same time.
 

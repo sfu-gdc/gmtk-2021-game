@@ -4,7 +4,7 @@ onready var player_body_ref = get_node(NodePath("/root/Sample/World/Player/Body"
 var pan_speed = 1.25
 var tracking_offset = Vector2(0, 0)
 
-var only_x = false
+var only_x = true
 
 func _ready():
 	tracking_offset = Vector2(4, 4) + Vector2(0, 8);

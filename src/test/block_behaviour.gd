@@ -10,7 +10,7 @@ var block_id = null
 var move_dir = null
 var offset = null
 
-var block_speed = 2.0
+var block_speed = 8.0
 
 func _ready():
 	print("block instantiated " + str(block_id))
