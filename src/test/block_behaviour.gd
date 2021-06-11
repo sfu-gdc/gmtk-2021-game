@@ -10,10 +10,10 @@ var block_id = null
 var move_dir = null
 var offset = null
 
-var block_speed = 8.0
+var block_speed = 12.0
 
 func _ready():
-	print("block instantiated " + str(block_id))
+	#print("block instantiated " + str(block_id))
 	body = get_child(0)
 	sprite = get_child(1)
 	match move_dir:

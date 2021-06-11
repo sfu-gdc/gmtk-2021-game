@@ -32,18 +32,18 @@ var world_map = []
 
 # Block spawing:
 
-var time_to_spawn_block = 0.25 # TODO: need to make this slowly increase, but start small. (need a few bursts & beginning to keep players on their toes.)
+var time_to_spawn_block = 0.5 # TODO: need to make this slowly increase, but start small. (need a few bursts & beginning to keep players on their toes.)
 var block_timer = 0.0
 
 # Prebuilt Functions:
 
 # This class builds the world
 func _ready():
-	rand.seed = 99+1 # TODO: get this from current time
+	rand.randomize()
 	
 	# create background
 	background_ref.position = Vector2(-48-8, -24)
-	for y in range(-map_size.y/2, 4):
+	for y in range(-map_size.y/2-1, 4+1):
 		for x in range(0, map_size.x/2 + 2):
 			var back_node = Sprite.new()
 			if rand.randi_range(0, 2) == 0:

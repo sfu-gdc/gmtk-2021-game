@@ -10,24 +10,22 @@ const block4_rect = Rect2(2*8, 3*8, 8, 8)
 const background_rect = Rect2(6*8, 0, 16, 16)
 const background_rect_pattern = Rect2(6*8, 16, 16, 16)
 
-var spritesheet = load("res://res/sample_tileset.png")
+var spritesheet: Resource = load("res://res/sample_tileset.png")
 
-var ground_tex = null
-var background_tex = null
+var ground_tex = AtlasTexture.new()
+var background_tex = AtlasTexture.new()
 
 func _ready():
 	 # makes it so that the texture isn't blurry & doesn't have weird aliasing effects.
-	spritesheet.set_flags(Texture.FLAG_MIPMAPS)
+	spritesheet.set_flags(Texture.FLAG_MIPMAPS | Texture.FLAG_CONVERT_TO_LINEAR | Texture.FLAG_MIRRORED_REPEAT)
 	
-	ground_tex = AtlasTexture.new()
 	ground_tex.set_atlas(spritesheet)
 	ground_tex.set_region(ground_rect)
 	
-	background_tex = AtlasTexture.new()
 	background_tex.set_atlas(spritesheet)
 	background_tex.set_region(background_rect)
 
-func get_tex(rect):
+func get_tex(rect: Rect2) -> Texture:
 	var tex = AtlasTexture.new()
 	tex.set_atlas(spritesheet)
 	tex.set_region(rect)
