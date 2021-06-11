@@ -10,13 +10,12 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
 
 config/name="gmtk-2021-game"
-run/main_scene="res://src/test/sample.tscn"
+run/main_scene="res://src/main.tscn"
 config/icon="res://icon.png"
 
 [physics]
