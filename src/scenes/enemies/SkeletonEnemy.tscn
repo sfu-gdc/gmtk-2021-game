@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://src/scenes/enemies/SkeletonEnemy.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.2968, 22.3922 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 10.1639, 22.5251 )
+
+[sub_resource type="CircleShape2D" id=3]
+radius = 205.202
+
+[node name="SkeletonEnemy" type="KinematicBody2D"]
+position = Vector2( 390.729, 268.683 )
+script = ExtResource( 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="Hurtbox" type="Area2D" parent="."]
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+modulate = Color( 0.792157, 0.0705882, 0.0705882, 1 )
+shape = SubResource( 2 )
+
+[node name="Visionbox" type="Area2D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Visionbox"]
+position = Vector2( -0.235321, 0.562164 )
+shape = SubResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+[connection signal="area_entered" from="Hurtbox" to="." method="_on_Hurtbox_area_entered"]
+[connection signal="area_entered" from="Visionbox" to="." method="_on_Visionbox_area_entered"]
+[connection signal="area_exited" from="Visionbox" to="." method="_on_Visionbox_area_exited"]
