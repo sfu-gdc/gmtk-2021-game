@@ -18,7 +18,10 @@ config/name="gmtk-2021-game"
 run/main_scene="res://src/area2.tscn"
 config/icon="res://icon.png"
 
-[input]
+[display]
+
+window/size/width=480
+window/size/height=480
 
 move_right={
 "deadzone": 0.5,
