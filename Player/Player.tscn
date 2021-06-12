@@ -31,7 +31,7 @@ extents = Vector2( 11, 11 )
 radius = 38.7342
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 32.4019, 7.6623 )
+extents = Vector2( 32.4019, 9.16741 )
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 29.2984
@@ -139,6 +139,7 @@ collision_mask = 21
 mode = 2
 mass = 10.0
 physics_material_override = ExtResource( 2 )
+linear_damp = 2.0
 script = ExtResource( 5 )
 __meta__ = {
 "_edit_group_": true
@@ -166,7 +167,7 @@ position = Vector2( 0, 10 )
 shape = SubResource( 5 )
 
 [node name="GroundDetector" type="Area2D" parent="Legs"]
-position = Vector2( 0, 47 )
+position = Vector2( 0, 43 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Legs/GroundDetector"]
 shape = SubResource( 6 )
@@ -189,8 +190,9 @@ position = Vector2( 300, 0 )
 collision_layer = 4
 collision_mask = 21
 mode = 2
-mass = 5.0
+mass = 0.5
 physics_material_override = ExtResource( 2 )
+linear_damp = 2.0
 __meta__ = {
 "_edit_group_": true
 }
@@ -239,7 +241,9 @@ position = Vector2( 297.995, 36.0052 )
 collision_layer = 0
 collision_mask = 0
 mode = 2
+mass = 0.5
 physics_material_override = ExtResource( 2 )
+linear_damp = 2.0
 __meta__ = {
 "_edit_group_": true
 }
