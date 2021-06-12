@@ -2,8 +2,8 @@
 
 [ext_resource path="res://src/WindArea.gd" type="Script" id=1]
 
-[sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 32, 64 )
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 24, 340 )
 
 [node name="WindArea" type="Area2D"]
 position = Vector2( 624, -144 )
