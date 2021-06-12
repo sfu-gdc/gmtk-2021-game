@@ -8,15 +8,15 @@ func _ready():
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
+func _physics_process(delta):
 	if Input.is_key_pressed(KEY_D):
-		body.linear_velocity += Vector2(4,0)
+		body.apply_central_impulse(Vector2(400,0))
 	elif Input.is_key_pressed(KEY_A):
-		body.linear_velocity -= Vector2(4,0)
+		body.apply_central_impulse(Vector2(-400,0))
 	elif Input.is_key_pressed(KEY_S):
-		body.linear_velocity += Vector2(0,4)
+		body.apply_central_impulse(Vector2(0,400))
 	elif Input.is_key_pressed(KEY_W):
-		body.linear_velocity -= Vector2(0,4)
+		body.apply_central_impulse(Vector2(0,-400))
 	else:
 		pass
 
