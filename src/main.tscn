@@ -1,10 +1,10 @@
-[gd_scene load_steps=21 format=2]
+[gd_scene load_steps=20 format=2]
 
 [ext_resource path="res://src/world_controller.gd" type="Script" id=1]
 [ext_resource path="res://res/images/spritesheet.png" type="Texture" id=2]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://WindArea.tscn" type="PackedScene" id=4]
 [ext_resource path="res://src/camera_follow.gd" type="Script" id=5]
-[ext_resource path="res://src/WindArea.gd" type="Script" id=6]
 
 [sub_resource type="ConvexPolygonShape2D" id=1]
 points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
@@ -417,9 +417,6 @@ points = PoolVector2Array( 0, 0, 16, 0, 16, 16, 0, 16 )
 } ]
 19/z_index = 0
 
-[sub_resource type="RectangleShape2D" id=15]
-extents = Vector2( 32, 64 )
-
 [node name="Main" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -450,23 +447,6 @@ tile_data = PoolIntArray( -1966115, 11, 0, -1966114, 11, 0, -1966113, 11, 0, -19
 
 [node name="WindArea" type="Node2D" parent="World2"]
 
-[node name="WindArea" type="Area2D" parent="World2/WindArea"]
-position = Vector2( 624, -144 )
-script = ExtResource( 6 )
+[node name="WindArea" parent="World2/WindArea" instance=ExtResource( 4 )]
 
-[node name="CPUParticles2D" type="CPUParticles2D" parent="World2/WindArea/WindArea"]
-position = Vector2( 0, 80 )
-rotation = -1.5708
-amount = 80
-lifetime = 0.8
-emission_shape = 2
-emission_rect_extents = Vector2( 1, 8 )
-spread = 0.0
-gravity = Vector2( 0, 0 )
-initial_velocity = 100.0
-initial_velocity_random = 0.75
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World2/WindArea/WindArea"]
-shape = SubResource( 15 )
-
-[node name="Player2" parent="." instance=ExtResource( 3 )]
+[node name="Player" parent="." instance=ExtResource( 3 )]

@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://src/WindArea.gd" type="Script" id=1]
+
+[sub_resource type="RectangleShape2D" id=15]
+extents = Vector2( 32, 64 )
+
+[node name="WindArea" type="Area2D"]
+position = Vector2( 624, -144 )
+script = ExtResource( 1 )
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+position = Vector2( 0, 80 )
+rotation = -1.5708
+amount = 80
+lifetime = 0.8
+emission_shape = 2
+emission_rect_extents = Vector2( 1, 8 )
+spread = 0.0
+gravity = Vector2( 0, 0 )
+initial_velocity = 100.0
+initial_velocity_random = 0.75
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 15 )
