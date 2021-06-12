@@ -27,11 +27,11 @@ extents = Vector2( 11, 11 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 11, 11 )
 
-[sub_resource type="RectangleShape2D" id=5]
-extents = Vector2( 36.2773, 38.1098 )
+[sub_resource type="CircleShape2D" id=5]
+radius = 38.7342
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 32.4019, 3.86134 )
+extents = Vector2( 32.4019, 7.6623 )
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 29.2984
@@ -252,7 +252,6 @@ script = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jaw"]
 shape = SubResource( 8 )
-
 [connection signal="body_entered" from="Hand1/Area2D" to="Hand1" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Hand1/Area2D" to="Hand1" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Hand2/Area2D" to="Hand2" method="_on_Area2D_body_entered"]
