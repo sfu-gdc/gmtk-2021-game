@@ -29,14 +29,8 @@ func _physics_process(delta):
 func _on_GroundDetector_body_entered(body):
 	if body.is_in_group("jumpable"):
 		floors.append(body)
-		print("Enter Elements: ")
-		for element in floors:
-			print(element.name)
 
 func _on_GroundDetector_body_exited(body):
 	var body_index := floors.find(body)
 	if body_index != -1 and floors.size() > 0:
 		floors.remove(body_index)
-		print("Left Elements: ")
-		for element in floors:
-			print(element.name)
