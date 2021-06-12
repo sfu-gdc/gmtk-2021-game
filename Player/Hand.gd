@@ -3,7 +3,7 @@ extends RigidBody2D
 
 
 # Constants
-const TORQUE_STR := 5_000_000.0
+const TORQUE_STR := 2_000_000.0
 
 
 var grabbable_objects := []
