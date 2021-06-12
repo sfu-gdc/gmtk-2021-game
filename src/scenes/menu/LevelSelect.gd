@@ -1,4 +1,4 @@
-extends Node
+extends Node2D
 
 
 # Declare member variables here. Examples:
@@ -8,16 +8,11 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-#	var menu_y := 2
-#	var menu_offset := 32
-#	var menu_index := 0
-#
-#	for button in self.get_children():
-#		if button is Button:
-##			button.
-##			button.text = "Wheeee!"
-##			button.y = 0
+	var level_index = 0
+	var scene_name = ""
+	for button in self.get_children():
+		if button is Button:
+			button.text = str(level_index + 1)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

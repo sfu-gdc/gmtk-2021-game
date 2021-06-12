@@ -1,4 +1,4 @@
-extends Node
+extends Button
 
 
 # Declare member variables here. Examples:
@@ -8,18 +8,13 @@ extends Node
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-#	var menu_y := 2
-#	var menu_offset := 32
-#	var menu_index := 0
-#
-#	for button in self.get_children():
-#		if button is Button:
-##			button.
-##			button.text = "Wheeee!"
-##			button.y = 0
+	pass # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):
 #	pass
+
+
+func _on_Quit_pressed():
+	get_tree().quit()
