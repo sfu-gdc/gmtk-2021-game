@@ -10,6 +10,8 @@ extents = Vector2( 16, 4 )
 "jumpable",
 ]]
 position = Vector2( 112, -220 )
+collision_layer = 16
+collision_mask = 21
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true

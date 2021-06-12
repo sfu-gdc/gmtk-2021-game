@@ -7,7 +7,7 @@ export var set_extents := Vector2(32, 64)
 
 onready var particles_ref: CPUParticles2D = get_node("CPUParticles2D")
 onready var shape_ref: CollisionShape2D = get_node("CollisionShape2D")
-var move_speed := 4000.0
+var move_speed := 1500.0
 var direction := Vector2(0, -1)
 
 # Called when the node enters the scene tree for the first time.
@@ -24,8 +24,8 @@ func _ready():
 func _physics_process(delta):
 	if not Engine.editor_hint:
 		for body in self.get_overlapping_bodies():
-			if body.get_class() != "TileMap":
-				body.apply_central_impulse(direction.normalized() * move_speed * delta)
+			if body.get_class() == "RigidBody2D":
+				body.apply_central_impulse(direction.normalized() * move_speed * body.mass * delta)
 	
 	if Engine.editor_hint:
 		$"CollisionShape2D".shape.extents = set_extents
