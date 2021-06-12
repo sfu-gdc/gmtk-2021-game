@@ -1,6 +1,6 @@
 extends Camera2D
 
-onready var player_body_ref = get_node(NodePath("/root/Main/Player/Sprite"))
+onready var player_body_ref = get_node(NodePath("/root/Main/Player2/Legs"))
 var pan_speed = 3.5
 var tracking_offset = Vector2(0, 0)
 
