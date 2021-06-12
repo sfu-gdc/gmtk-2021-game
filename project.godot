@@ -18,13 +18,17 @@ config/name="gmtk-2021-game"
 run/main_scene="res://src/test/sample.tscn"
 config/icon="res://icon.png"
 
+[display]
+
+window/size/width=480
+window/size/height=480
+
 [physics]
 
 common/enable_pause_aware_picking=true
 
 [rendering]
 
-quality/driver/driver_name="GLES2"
 vram_compression/import_etc=true
 vram_compression/import_etc2=false
 environment/default_environment="res://default_env.tres"

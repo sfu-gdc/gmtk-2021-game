@@ -1,43 +1,80 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://icon.png" type="Texture" id=1]
+[ext_resource path="res://res/logo.png" type="Texture" id=1]
+[ext_resource path="res://src/style/stylebox.tres" type="StyleBox" id=2]
+[ext_resource path="res://src/scenes/menu/ButtonStuff.gd" type="Script" id=3]
+[ext_resource path="res://src/scenes/menu/ButtonController.gd" type="Script" id=4]
+[ext_resource path="res://src/scenes/menu/TitleAnimation.gd" type="Script" id=5]
 
 [node name="Menu" type="Control"]
-anchor_right = 1.0
-anchor_bottom = 1.0
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -509.508
+margin_top = -7.34125
+margin_right = 514.492
+margin_bottom = 592.659
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-margin_left = 60.8566
-margin_top = 61.7131
-margin_right = 964.857
-margin_bottom = 541.713
+[node name="Buttons" type="Node" parent="."]
+script = ExtResource( 4 )
+
+[node name="MenuPos" type="Position2D" parent="Buttons"]
+position = Vector2( 77.1453, 313.412 )
+
+[node name="NewGame" type="Button" parent="Buttons"]
+anchor_left = 0.065
+anchor_top = 0.505
+anchor_right = 0.119
+anchor_bottom = 0.505
+margin_left = 1.05945
+margin_top = 1.05945
+margin_right = 169.763
+margin_bottom = 79.0594
+custom_styles/normal = ExtResource( 2 )
+text = "Start Game"
+align = 0
+script = ExtResource( 3 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="Logo" type="TextureRect" parent="VBoxContainer"]
-margin_right = 904.0
-margin_bottom = 64.0
+[node name="LevelSelect" type="Button" parent="Buttons"]
+anchor_left = 0.065
+anchor_top = 0.505
+anchor_right = 0.119
+anchor_bottom = 0.505
+margin_left = 3.89941
+margin_top = 93.4881
+margin_right = 172.603
+margin_bottom = 171.488
+custom_styles/normal = ExtResource( 2 )
+text = "Rate the game on itch.io!"
+align = 0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RateGame" type="Button" parent="Buttons"]
+anchor_left = 0.065
+anchor_top = 0.505
+anchor_right = 0.119
+anchor_bottom = 0.505
+margin_left = 3.32938
+margin_top = 188.025
+margin_right = 172.033
+margin_bottom = 266.025
+custom_styles/normal = ExtResource( 2 )
+text = "Rate the game on itch.io!"
+align = 0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 511.113, 76.3719 )
 texture = ExtResource( 1 )
-stretch_mode = 4
-
-[node name="HBoxContainer" type="HBoxContainer" parent="VBoxContainer"]
-margin_top = 68.0
-margin_right = 904.0
-margin_bottom = 480.0
-size_flags_vertical = 3
-
-[node name="Buttons" type="VBoxContainer" parent="VBoxContainer/HBoxContainer"]
-margin_right = 904.0
-margin_bottom = 412.0
-size_flags_horizontal = 3
-
-[node name="NewGame" type="Button" parent="VBoxContainer/HBoxContainer/Buttons"]
-margin_right = 904.0
-margin_bottom = 20.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
+script = ExtResource( 5 )
