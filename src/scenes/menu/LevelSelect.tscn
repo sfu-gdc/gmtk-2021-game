@@ -1,0 +1,29 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://src/scenes/menu/LevelButtonTemplate.tscn" type="PackedScene" id=1]
+[ext_resource path="res://res/mainFont.tres" type="DynamicFont" id=2]
+[ext_resource path="res://src/scenes/menu/LevelSelect.gd" type="Script" id=3]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = 155.5
+margin_right = 326.5
+margin_bottom = 79.0
+custom_fonts/mono_font = ExtResource( 2 )
+custom_fonts/normal_font = ExtResource( 2 )
+text = "Level Select"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LevelTemplate" parent="." instance=ExtResource( 1 )]
+margin_left = 13.0
+margin_top = 398.0
+margin_right = 105.0
+margin_bottom = 467.0
+text = "Back"
+level = "res://src/scenes/menu/Menu.tscn"
