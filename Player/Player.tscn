@@ -31,7 +31,7 @@ extents = Vector2( 11, 11 )
 radius = 38.7342
 
 [sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 32.4019, 9.16741 )
+extents = Vector2( 32.4019, 23.1217 )
 
 [sub_resource type="CircleShape2D" id=7]
 radius = 29.2984
@@ -167,7 +167,7 @@ position = Vector2( 0, 10 )
 shape = SubResource( 5 )
 
 [node name="GroundDetector" type="Area2D" parent="Legs"]
-position = Vector2( 0, 43 )
+position = Vector2( 0, 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Legs/GroundDetector"]
 shape = SubResource( 6 )
