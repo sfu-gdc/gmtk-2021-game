@@ -189,7 +189,7 @@ position = Vector2( 300, 0 )
 collision_layer = 4
 collision_mask = 21
 mode = 2
-mass = 10.0
+mass = 5.0
 physics_material_override = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
