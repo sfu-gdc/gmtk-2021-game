@@ -7,8 +7,8 @@ export var set_extents := Vector2(32, 64)
 
 onready var particles_ref: CPUParticles2D = get_node("CPUParticles2D")
 onready var shape_ref: CollisionShape2D = get_node("CollisionShape2D")
-var move_speed = 4000
-var direction = Vector2(0, -1)
+var move_speed := 4000.0
+var direction := Vector2(0, -1)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

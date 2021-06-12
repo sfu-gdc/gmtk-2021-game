@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://Player/vertebrae_texture.png" type="Texture" id=1]
+[ext_resource path="res://Player/BodyPhysicsMaterial.tres" type="PhysicsMaterial" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 15, 15 )
@@ -10,6 +11,7 @@ extents = Vector2( 15, 15 )
 [node name="Vertebrae" type="RigidBody2D" parent="."]
 position = Vector2( 15, 0 )
 collision_layer = 8
+physics_material_override = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -30,6 +32,7 @@ node_b = NodePath("../Vertebrae2")
 [node name="Vertebrae2" type="RigidBody2D" parent="."]
 position = Vector2( 45, 0 )
 collision_layer = 2147483656
+physics_material_override = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -53,6 +56,7 @@ node_b = NodePath("../Vertebrae3")
 [node name="Vertebrae3" type="RigidBody2D" parent="."]
 position = Vector2( 75, 0 )
 collision_layer = 8
+physics_material_override = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -76,6 +80,7 @@ node_b = NodePath("../Vertebrae4")
 [node name="Vertebrae4" type="RigidBody2D" parent="."]
 position = Vector2( 105, 0 )
 collision_layer = 8
+physics_material_override = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -99,6 +104,7 @@ node_b = NodePath("../Vertebrae5")
 [node name="Vertebrae5" type="RigidBody2D" parent="."]
 position = Vector2( 135, 0 )
 collision_layer = 8
+physics_material_override = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -122,6 +128,7 @@ node_b = NodePath("../Vertebrae6")
 [node name="Vertebrae6" type="RigidBody2D" parent="."]
 position = Vector2( 165, 0 )
 collision_layer = 8
+physics_material_override = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -145,6 +152,7 @@ node_b = NodePath("../Vertebrae7")
 [node name="Vertebrae7" type="RigidBody2D" parent="."]
 position = Vector2( 195, 0 )
 collision_layer = 8
+physics_material_override = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -168,6 +176,7 @@ node_b = NodePath("../Vertebrae8")
 [node name="Vertebrae8" type="RigidBody2D" parent="."]
 position = Vector2( 225, 0 )
 collision_layer = 8
+physics_material_override = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -191,6 +200,7 @@ node_b = NodePath("../Vertebrae9")
 [node name="Vertebrae9" type="RigidBody2D" parent="."]
 position = Vector2( 255, 0 )
 collision_layer = 8
+physics_material_override = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }
@@ -214,6 +224,7 @@ node_b = NodePath("../Vertebrae10")
 [node name="Vertebrae10" type="RigidBody2D" parent="."]
 position = Vector2( 285, 0 )
 collision_layer = 8
+physics_material_override = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
 }

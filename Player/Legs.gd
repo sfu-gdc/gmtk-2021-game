@@ -3,9 +3,9 @@ extends RigidBody2D
 
 
 # Constants
-const GROUND_ACCEL := 10_000.0
+const GROUND_ACCEL := 20_000.0
 const AIR_ACCEL := 5000.0
-const JUMP_STR := 7000.0
+const JUMP_STR := 10_000.0
 
 
 # Properties
