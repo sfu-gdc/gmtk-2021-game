@@ -69,7 +69,6 @@ __meta__ = {
 position = Vector2( 511.113, 76.3719 )
 texture = ExtResource( 1 )
 script = ExtResource( 5 )
-
 [connection signal="pressed" from="Buttons/Play" to="Buttons/Play" method="_on_Play_pressed"]
 [connection signal="pressed" from="Buttons/Rate" to="Buttons/Rate" method="_on_Rate_pressed"]
 [connection signal="pressed" from="Buttons/Quit" to="Buttons/Quit" method="_on_Quit_pressed"]

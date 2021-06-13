@@ -17,22 +17,22 @@
 [ext_resource path="res://Player/HeadParts.gd" type="Script" id=15]
 [ext_resource path="res://Player/Leg2Sprite.gd" type="Script" id=16]
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=1]
 radius = 38.7342
 
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 32.4019, 23.1217 )
-
-[sub_resource type="RectangleShape2D" id=1]
-extents = Vector2( 11, 11 )
-
 [sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 11, 11 )
+extents = Vector2( 32.4019, 23.1217 )
 
 [sub_resource type="RectangleShape2D" id=3]
 extents = Vector2( 11, 11 )
 
 [sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 11, 11 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 11, 11 )
+
+[sub_resource type="RectangleShape2D" id=6]
 extents = Vector2( 11, 11 )
 
 [sub_resource type="CircleShape2D" id=7]
@@ -83,13 +83,13 @@ flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Legs"]
 position = Vector2( 0, 10 )
-shape = SubResource( 5 )
+shape = SubResource( 1 )
 
 [node name="GroundDetector" type="Area2D" parent="Legs"]
 position = Vector2( 0, 30 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Legs/GroundDetector"]
-shape = SubResource( 6 )
+shape = SubResource( 2 )
 
 [node name="Spine" parent="." instance=ExtResource( 1 )]
 
@@ -128,13 +128,13 @@ scale = Vector2( 3.8, 3.8 )
 texture = ExtResource( 12 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hand1"]
-shape = SubResource( 1 )
+shape = SubResource( 3 )
 
 [node name="Area2D" type="Area2D" parent="Hand1"]
 collision_mask = 21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hand1/Area2D"]
-shape = SubResource( 2 )
+shape = SubResource( 4 )
 
 [node name="Arm2" type="PinJoint2D" parent="."]
 position = Vector2( 300, 0 )
@@ -176,13 +176,13 @@ texture = ExtResource( 12 )
 flip_v = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hand2"]
-shape = SubResource( 3 )
+shape = SubResource( 5 )
 
 [node name="Area2D" type="Area2D" parent="Hand2"]
 collision_mask = 21
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hand2/Area2D"]
-shape = SubResource( 4 )
+shape = SubResource( 6 )
 
 [node name="ButtJoint" type="PinJoint2D" parent="."]
 node_a = NodePath("../Legs")
