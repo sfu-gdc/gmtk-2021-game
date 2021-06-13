@@ -303,7 +303,7 @@ position = Vector2( 431.036, -185.86 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="SpongeBall2" parent="World/Balls" instance=ExtResource( 3 )]
-position = Vector2( 113.306, -194.674 )
+position = Vector2( 112.931, -194.674 )
 scale = Vector2( 0.25, 0.25 )
 
 [node name="SpongeWall" type="RigidBody2D" parent="World/Balls" groups=[
