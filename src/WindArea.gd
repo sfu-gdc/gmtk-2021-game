@@ -15,10 +15,10 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(delta):
-	if not Engine.editor_hint:
-		for body in self.get_overlapping_bodies():
-			if body.get_class() == "RigidBody2D":
-				body.apply_central_impulse(direction.normalized() * move_speed * body.mass * delta)
+	#if not Engine.editor_hint:
+	for body in self.get_overlapping_bodies():
+		if body.get_class() == "RigidBody2D":
+			body.apply_central_impulse(direction.normalized() * move_speed * body.mass * delta)
 	
-	if Engine.editor_hint:
-		$CollisionShape2D.shape.extents = set_extents
+	#if Engine.editor_hint:
+		#$CollisionShape2D.shape.extents = set_extents
