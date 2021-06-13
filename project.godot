@@ -15,7 +15,7 @@ _global_script_class_icons={
 [application]
 
 config/name="gmtk-2021-game"
-run/main_scene="res://src/area1.tscn"
+run/main_scene="res://src/scenes/menu/Menu.tscn"
 config/icon="res://icon.png"
 
 [display]

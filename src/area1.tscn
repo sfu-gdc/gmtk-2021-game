@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://src/camera_follow.gd" type="Script" id=1]
 [ext_resource path="res://src/WorldTileset.tres" type="TileSet" id=2]
@@ -12,10 +12,7 @@
 [ext_resource path="res://res/images/Trapdoor.png" type="Texture" id=10]
 [ext_resource path="res://src/Area1MilkTileset.tres" type="TileSet" id=11]
 [ext_resource path="res://src/MilkSploosh.gd" type="Script" id=12]
-[ext_resource path="res://res/images/Background/beeg1.png" type="Texture" id=13]
-[ext_resource path="res://res/images/Background/beeg2.png" type="Texture" id=14]
-[ext_resource path="res://res/images/Background/0.png" type="Texture" id=15]
-[ext_resource path="res://res/images/Background/beeg3.png" type="Texture" id=16]
+[ext_resource path="res://ParallaxBackground.tscn" type="PackedScene" id=13]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 97.4651
@@ -202,7 +199,7 @@ margin_right = 1103.56
 margin_bottom = -303.777
 rect_rotation = 7.8
 custom_fonts/font = ExtResource( 9 )
-text = "Click SPACE or W to jump his legs"
+text = "Click SPACE or W to make his legs jump"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -226,7 +223,7 @@ margin_right = 2372.62
 margin_bottom = -843.958
 rect_rotation = 7.7
 custom_fonts/font = ExtResource( 9 )
-text = "Move your mouse to make Skele-Tony's hands move"
+text = "Use your mouse to move Skele-Tony's hands"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -423,13 +420,15 @@ __meta__ = {
 "_edit_use_anchors_": false
 }
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" parent="." instance=ExtResource( 13 )]
 
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
+[node name="Fade" type="CanvasLayer" parent="."]
+
+[node name="CanvasModulate" type="ColorRect" parent="Fade"]
+modulate = Color( 0, 0, 0, 0 )
 margin_right = 1280.0
 margin_bottom = 720.0
-texture = ExtResource( 15 )
-stretch_mode = 2
+color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -457,6 +456,8 @@ motion_offset = Vector2( 0, -200 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
 scale = Vector2( 4, 4 )
 texture = ExtResource( 16 )
+
+[node name="Tween" type="Tween" parent="Fade/CanvasModulate"]
 
 [connection signal="button_off" from="World/ButtonsAndDoors/Group1/PhysicsButton" to="World/ButtonsAndDoors/Group1/Door" method="_on_PhysicsButton_button_off"]
 [connection signal="button_on" from="World/ButtonsAndDoors/Group1/PhysicsButton" to="World/ButtonsAndDoors/Group1/Door" method="_on_PhysicsButton_button_on"]
