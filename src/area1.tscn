@@ -19,14 +19,13 @@ radius = 97.4651
 [sub_resource type="CircleShape2D" id=2]
 radius = 3.62168
 
-[sub_resource type="CircleShape2D" id=5]
+[sub_resource type="CircleShape2D" id=3]
 radius = 8.55777
 
-[sub_resource type="CircleShape2D" id=3]
+[sub_resource type="CircleShape2D" id=4]
 radius = 8.21367
 
-[sub_resource type="Animation" id=4]
-resource_name = "Up-Down"
+[sub_resource type="Animation" id=5]
 length = 20.0
 loop = true
 tracks/0/type = "bezier"
@@ -320,7 +319,7 @@ __meta__ = {
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Balls/SpongeWall2"]
-shape = SubResource( 5 )
+shape = SubResource( 3 )
 
 [node name="Animated" type="Node2D" parent="World"]
 
@@ -337,7 +336,7 @@ __meta__ = {
 texture = ExtResource( 4 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/Animated/LiftyBall"]
-shape = SubResource( 3 )
+shape = SubResource( 4 )
 
 [node name="LiftyPlat" type="KinematicBody2D" parent="World/Animated" groups=[
 "jumpable",
@@ -355,7 +354,7 @@ polygon = PoolVector2Array( -15.9787, -3.96521, 16.0376, -3.96521, 15.9517, 4.25
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="World/Animated"]
 autoplay = "Up-Down"
-anims/Up-Down = SubResource( 4 )
+anims/Up-Down = SubResource( 5 )
 
 [node name="Player" parent="." instance=ExtResource( 6 )]
 
@@ -392,7 +391,7 @@ __meta__ = {
 shape = SubResource( 7 )
 
 [node name="MilkSploosh" type="CPUParticles2D" parent="Milk"]
-position = Vector2( 100.56, 102.706 )
+position = Vector2( 3093.36, -1153.44 )
 emitting = false
 amount = 32
 one_shot = true
