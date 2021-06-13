@@ -17,6 +17,12 @@
 [ext_resource path="res://Player/HeadParts.gd" type="Script" id=15]
 [ext_resource path="res://Player/Leg2Sprite.gd" type="Script" id=16]
 
+[sub_resource type="CircleShape2D" id=5]
+radius = 38.7342
+
+[sub_resource type="RectangleShape2D" id=6]
+extents = Vector2( 32.4019, 23.1217 )
+
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 11, 11 )
 
@@ -29,12 +35,6 @@ extents = Vector2( 11, 11 )
 [sub_resource type="RectangleShape2D" id=4]
 extents = Vector2( 11, 11 )
 
-[sub_resource type="CircleShape2D" id=5]
-radius = 38.7342
-
-[sub_resource type="RectangleShape2D" id=6]
-extents = Vector2( 32.4019, 23.1217 )
-
 [sub_resource type="CircleShape2D" id=7]
 radius = 29.2984
 
@@ -42,6 +42,56 @@ radius = 29.2984
 extents = Vector2( 21.2705, 15.0539 )
 
 [node name="Player" type="Node2D"]
+
+[node name="Legs" type="RigidBody2D" parent="."]
+position = Vector2( 0, 14.2548 )
+collision_layer = 4
+collision_mask = 21
+mode = 2
+mass = 10.0
+physics_material_override = ExtResource( 2 )
+linear_damp = 2.0
+script = ExtResource( 5 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Sprite" type="Sprite" parent="Legs"]
+position = Vector2( 0, -3 )
+rotation = -1.5708
+scale = Vector2( 3.8, 3.8 )
+texture = ExtResource( 14 )
+
+[node name="HipL" type="Node2D" parent="Legs"]
+position = Vector2( -15.5109, 10.4452 )
+scale = Vector2( 2.85, 2.85 )
+script = ExtResource( 3 )
+
+[node name="Leg1Sprite" type="Sprite" parent="Legs/HipL"]
+position = Vector2( -5.08389, 6.86133 )
+texture = ExtResource( 13 )
+
+[node name="HipR" type="Node2D" parent="Legs"]
+position = Vector2( 11.475, 10.4452 )
+scale = Vector2( 2.85, 2.85 )
+script = ExtResource( 16 )
+
+[node name="Leg2Sprite" type="Sprite" parent="Legs/HipR"]
+position = Vector2( 6.5, 6.86133 )
+texture = ExtResource( 13 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Legs"]
+position = Vector2( 0, 10 )
+shape = SubResource( 5 )
+
+[node name="GroundDetector" type="Area2D" parent="Legs"]
+position = Vector2( 0, 30 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Legs/GroundDetector"]
+shape = SubResource( 6 )
+
+[node name="Spine" parent="." instance=ExtResource( 1 )]
 
 [node name="Arm1" type="PinJoint2D" parent="."]
 position = Vector2( 300, 0 )
@@ -134,56 +184,6 @@ collision_mask = 21
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Hand2/Area2D"]
 shape = SubResource( 4 )
 
-[node name="Legs" type="RigidBody2D" parent="."]
-position = Vector2( 0, 14.2548 )
-collision_layer = 4
-collision_mask = 21
-mode = 2
-mass = 10.0
-physics_material_override = ExtResource( 2 )
-linear_damp = 2.0
-script = ExtResource( 5 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="Sprite" parent="Legs"]
-position = Vector2( 0, -3 )
-rotation = -1.5708
-scale = Vector2( 3.8, 3.8 )
-texture = ExtResource( 14 )
-
-[node name="HipL" type="Node2D" parent="Legs"]
-position = Vector2( -15.5109, 10.4452 )
-scale = Vector2( 2.85, 2.85 )
-script = ExtResource( 3 )
-
-[node name="Leg1Sprite" type="Sprite" parent="Legs/HipL"]
-position = Vector2( -5.08389, 6.86133 )
-texture = ExtResource( 13 )
-
-[node name="HipR" type="Node2D" parent="Legs"]
-position = Vector2( 11.475, 10.4452 )
-scale = Vector2( 2.85, 2.85 )
-script = ExtResource( 16 )
-
-[node name="Leg2Sprite" type="Sprite" parent="Legs/HipR"]
-position = Vector2( 6.5, 6.86133 )
-texture = ExtResource( 13 )
-flip_h = true
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Legs"]
-position = Vector2( 0, 10 )
-shape = SubResource( 5 )
-
-[node name="GroundDetector" type="Area2D" parent="Legs"]
-position = Vector2( 0, 30 )
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Legs/GroundDetector"]
-shape = SubResource( 6 )
-
-[node name="Spine" parent="." instance=ExtResource( 1 )]
-
 [node name="ButtJoint" type="PinJoint2D" parent="."]
 node_a = NodePath("../Legs")
 script = ExtResource( 6 )
@@ -266,10 +266,9 @@ script = ExtResource( 15 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Jaw"]
 shape = SubResource( 8 )
-
+[connection signal="body_entered" from="Legs/GroundDetector" to="Legs" method="_on_GroundDetector_body_entered"]
+[connection signal="body_exited" from="Legs/GroundDetector" to="Legs" method="_on_GroundDetector_body_exited"]
 [connection signal="body_entered" from="Hand1/Area2D" to="Hand1" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Hand1/Area2D" to="Hand1" method="_on_Area2D_body_exited"]
 [connection signal="body_entered" from="Hand2/Area2D" to="Hand2" method="_on_Area2D_body_entered"]
 [connection signal="body_exited" from="Hand2/Area2D" to="Hand2" method="_on_Area2D_body_exited"]
-[connection signal="body_entered" from="Legs/GroundDetector" to="Legs" method="_on_GroundDetector_body_entered"]
-[connection signal="body_exited" from="Legs/GroundDetector" to="Legs" method="_on_GroundDetector_body_exited"]
