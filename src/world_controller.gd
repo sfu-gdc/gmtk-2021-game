@@ -1,16 +1,33 @@
 extends Node
 
+const frame_time = 0.125
+const max_frame = 1
 
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+var cur_time = 0.0
+var frame = 0
 
-
-# Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
-
+	pass 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func _process(delta):
+	update_anim(delta)
+
+func update_anim(delta):
+	cur_time += delta
+	
+	if cur_time > frame_time:
+		cur_time -= frame_time
+		frame += 1
+		if frame > max_frame:
+			frame = 0
+			
+		update_frame()
+	
+func update_frame():
+	if frame == 0:
+		$SodaWater.hide()
+		$SodaWaterFrame2.show()
+	elif frame == 1:
+		$SodaWater.show()
+		$SodaWaterFrame2.hide()
