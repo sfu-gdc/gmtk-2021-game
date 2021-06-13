@@ -3,11 +3,11 @@
 [ext_resource path="res://src/camera_follow.gd" type="Script" id=1]
 [ext_resource path="res://src/WorldTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://SpongeBall1.tscn" type="PackedScene" id=3]
-[ext_resource path="res://src/world_controller.gd" type="Script" id=4]
 [ext_resource path="res://WindArea.tscn" type="PackedScene" id=5]
 [ext_resource path="res://Player/Player.tscn" type="PackedScene" id=6]
 [ext_resource path="res://PhysicsButton.tscn" type="PackedScene" id=7]
 [ext_resource path="res://Door.tscn" type="PackedScene" id=8]
+[ext_resource path="res://res/instruction_font.tres" type="DynamicFont" id=9]
 
 [node name="Main" type="Node2D"]
 
@@ -19,7 +19,83 @@ script = ExtResource( 1 )
 [node name="World" type="Node2D" parent="."]
 position = Vector2( 0, 300 )
 scale = Vector2( 4, 4 )
-script = ExtResource( 4 )
+
+[node name="Text" type="Node2D" parent="World"]
+scale = Vector2( 0.25, 0.25 )
+
+[node name="Label1" type="Label" parent="World/Text"]
+margin_left = -322.0
+margin_top = -377.0
+margin_right = 286.0
+margin_bottom = -194.0
+rect_rotation = -7.7
+custom_fonts/font = ExtResource( 9 )
+text = "Use D and A to move Skele-Tony's legs left and right"
+align = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label2" type="Label" parent="World/Text"]
+margin_left = 526.559
+margin_top = -393.777
+margin_right = 1103.56
+margin_bottom = -303.777
+rect_rotation = 7.8
+custom_fonts/font = ExtResource( 9 )
+text = "Click SPACE or W to jump his legs"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label3" type="Label" parent="World/Text"]
+margin_left = 1173.25
+margin_top = -432.802
+margin_right = 2260.25
+margin_bottom = -342.802
+custom_fonts/font = ExtResource( 9 )
+text = "Steal the milk factory's milk to make Skele-Tony's bones strong!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label4" type="Label" parent="World/Text"]
+margin_left = 1891.62
+margin_top = -1026.96
+margin_right = 2372.62
+margin_bottom = -843.958
+rect_rotation = 7.7
+custom_fonts/font = ExtResource( 9 )
+text = "Move your mouse to make Skele-Tony's hands move"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label5" type="Label" parent="World/Text"]
+margin_left = 1253.5
+margin_top = -933.342
+margin_right = 1734.5
+margin_bottom = -750.342
+rect_rotation = -7.8
+custom_fonts/font = ExtResource( 9 )
+text = "Click when his hands are on a spongy object to grab on"
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Label6" type="Label" parent="World/Text"]
+margin_left = -458.338
+margin_top = -983.016
+margin_right = 340.662
+margin_bottom = -800.016
+custom_fonts/font = ExtResource( 9 )
+text = "Skele-Tony's spine can pass through platforms"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="ButtonsAndDoors" type="Node2D" parent="World"]
 
@@ -70,8 +146,6 @@ tile_data = PoolIntArray( -851986, 20, 0, -851982, 20, 0, -851978, 20, 0, -85197
 [node name="WindAreas" type="Node2D" parent="World"]
 
 [node name="WindArea" parent="World/WindAreas" instance=ExtResource( 5 )]
-position = Vector2( 624, -130 )
-set_extents = Vector2( 32, 50 )
 
 [node name="Balls" type="Node2D" parent="World"]
 
