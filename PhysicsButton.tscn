@@ -35,7 +35,7 @@ shape = SubResource( 4 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 3 )
-volume_db = -13.312
+volume_db = -15.299
 
 [connection signal="body_entered" from="." to="." method="_on_PhysicsButton_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_PhysicsButton_body_exited"]
