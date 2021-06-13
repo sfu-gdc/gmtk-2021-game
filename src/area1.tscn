@@ -188,7 +188,7 @@ margin_right = 286.0
 margin_bottom = -194.0
 rect_rotation = -7.7
 custom_fonts/font = ExtResource( 9 )
-text = "Use D and A to move Skele-Tony's legs left and right"
+text = "Use A and D to move Skele-Tony's legs left and right"
 align = 1
 autowrap = true
 __meta__ = {
@@ -409,7 +409,6 @@ scale_amount = 10.0
 scale_amount_random = 1.0
 script = ExtResource( 12 )
 
-
 [node name="EndOfGame" type="CanvasLayer" parent="."]
 
 [node name="Lvl1End" type="Label" parent="EndOfGame"]
@@ -459,13 +458,12 @@ motion_offset = Vector2( 0, -200 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
 scale = Vector2( 4, 4 )
 texture = ExtResource( 16 )
-
 [connection signal="button_off" from="World/ButtonsAndDoors/Group1/PhysicsButton" to="World/ButtonsAndDoors/Group1/Door" method="_on_PhysicsButton_button_off"]
 [connection signal="button_on" from="World/ButtonsAndDoors/Group1/PhysicsButton" to="World/ButtonsAndDoors/Group1/Door" method="_on_PhysicsButton_button_on"]
-[connection signal="button_off" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door2" method="_on_PhysicsButton_button_off"]
 [connection signal="button_off" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door" method="_on_PhysicsButton_button_off"]
-[connection signal="button_on" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door2" method="_on_PhysicsButton_button_on"]
+[connection signal="button_off" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door2" method="_on_PhysicsButton_button_off"]
 [connection signal="button_on" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door" method="_on_PhysicsButton_button_on"]
+[connection signal="button_on" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door2" method="_on_PhysicsButton_button_on"]
 [connection signal="button_off" from="World/ButtonsAndDoors/Group3/PhysicsButton" to="World/ButtonsAndDoors/Group3/Door" method="_on_PhysicsButton_button_off"]
 [connection signal="button_off" from="World/ButtonsAndDoors/Group3/PhysicsButton" to="World/ButtonsAndDoors/Group3/Door2" method="_on_PhysicsButton_button_off"]
 [connection signal="button_on" from="World/ButtonsAndDoors/Group3/PhysicsButton" to="World/ButtonsAndDoors/Group3/Door" method="_on_PhysicsButton_button_on"]
