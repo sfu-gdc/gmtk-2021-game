@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://src/camera_follow.gd" type="Script" id=1]
 [ext_resource path="res://src/WorldTileset.tres" type="TileSet" id=2]
@@ -12,6 +12,10 @@
 [ext_resource path="res://res/images/Trapdoor.png" type="Texture" id=10]
 [ext_resource path="res://src/Area1MilkTileset.tres" type="TileSet" id=11]
 [ext_resource path="res://src/MilkSploosh.gd" type="Script" id=12]
+[ext_resource path="res://res/images/Background/beeg1.png" type="Texture" id=13]
+[ext_resource path="res://res/images/Background/beeg2.png" type="Texture" id=14]
+[ext_resource path="res://res/images/Background/0.png" type="Texture" id=15]
+[ext_resource path="res://res/images/Background/beeg3.png" type="Texture" id=16]
 
 [sub_resource type="CircleShape2D" id=1]
 radius = 97.4651
@@ -79,7 +83,7 @@ tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
+"times": PoolRealArray( 0, 0.6, 0.9 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ true, false, true ]
@@ -91,7 +95,7 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0, 0.5, 1 ),
+"times": PoolRealArray( 0.1, 0.4, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 1,
 "values": [ false, true, false ]
@@ -391,7 +395,7 @@ __meta__ = {
 shape = SubResource( 7 )
 
 [node name="MilkSploosh" type="CPUParticles2D" parent="Milk"]
-position = Vector2( 3093.36, -1153.44 )
+position = Vector2( 3047.92, -1159.85 )
 emitting = false
 amount = 32
 one_shot = true
@@ -404,6 +408,56 @@ initial_velocity_random = 0.41
 scale_amount = 10.0
 scale_amount_random = 1.0
 script = ExtResource( 12 )
+
+[node name="EndOfGame" type="CanvasLayer" parent="."]
+
+[node name="Lvl1End" type="Label" parent="EndOfGame"]
+visible = false
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_right = 108.0
+margin_bottom = 14.0
+text = "You got the milk!"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
+margin_right = 1280.0
+margin_bottom = 720.0
+texture = ExtResource( 15 )
+stretch_mode = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.95, 0.95 )
+motion_offset = Vector2( 0, -200 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 13 )
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.9, 0.9 )
+motion_offset = Vector2( 0, -200 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 14 )
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2( 0.85, 0.85 )
+motion_offset = Vector2( 0, -200 )
+
+[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
+scale = Vector2( 4, 4 )
+texture = ExtResource( 16 )
 [connection signal="button_off" from="World/ButtonsAndDoors/Group1/PhysicsButton" to="World/ButtonsAndDoors/Group1/Door" method="_on_PhysicsButton_button_off"]
 [connection signal="button_on" from="World/ButtonsAndDoors/Group1/PhysicsButton" to="World/ButtonsAndDoors/Group1/Door" method="_on_PhysicsButton_button_on"]
 [connection signal="button_off" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door" method="_on_PhysicsButton_button_off"]
