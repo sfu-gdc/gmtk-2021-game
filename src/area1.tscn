@@ -404,12 +404,13 @@ initial_velocity_random = 0.41
 scale_amount = 10.0
 scale_amount_random = 1.0
 script = ExtResource( 12 )
+
 [connection signal="button_off" from="World/ButtonsAndDoors/Group1/PhysicsButton" to="World/ButtonsAndDoors/Group1/Door" method="_on_PhysicsButton_button_off"]
 [connection signal="button_on" from="World/ButtonsAndDoors/Group1/PhysicsButton" to="World/ButtonsAndDoors/Group1/Door" method="_on_PhysicsButton_button_on"]
-[connection signal="button_off" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door" method="_on_PhysicsButton_button_off"]
 [connection signal="button_off" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door2" method="_on_PhysicsButton_button_off"]
-[connection signal="button_on" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door" method="_on_PhysicsButton_button_on"]
+[connection signal="button_off" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door" method="_on_PhysicsButton_button_off"]
 [connection signal="button_on" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door2" method="_on_PhysicsButton_button_on"]
+[connection signal="button_on" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door" method="_on_PhysicsButton_button_on"]
 [connection signal="button_off" from="World/ButtonsAndDoors/Group3/PhysicsButton" to="World/ButtonsAndDoors/Group3/Door" method="_on_PhysicsButton_button_off"]
 [connection signal="button_off" from="World/ButtonsAndDoors/Group3/PhysicsButton" to="World/ButtonsAndDoors/Group3/Door2" method="_on_PhysicsButton_button_off"]
 [connection signal="button_on" from="World/ButtonsAndDoors/Group3/PhysicsButton" to="World/ButtonsAndDoors/Group3/Door" method="_on_PhysicsButton_button_on"]
