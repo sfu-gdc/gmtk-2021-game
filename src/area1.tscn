@@ -462,8 +462,8 @@ __meta__ = {
 
 [node name="CanvasModulate" type="ColorRect" parent="Fade"]
 modulate = Color( 0, 0, 0, 0 )
-margin_right = 3492.0
-margin_bottom = 1381.0
+margin_right = 1280.0
+margin_bottom = 720.0
 color = Color( 0, 0, 0, 1 )
 __meta__ = {
 "_edit_use_anchors_": false
@@ -478,12 +478,12 @@ autoplay = true
 
 [connection signal="button_off" from="World/ButtonsAndDoors/Group1/PhysicsButton" to="World/ButtonsAndDoors/Group1/Door" method="_on_PhysicsButton_button_off"]
 [connection signal="button_on" from="World/ButtonsAndDoors/Group1/PhysicsButton" to="World/ButtonsAndDoors/Group1/Door" method="_on_PhysicsButton_button_on"]
-[connection signal="button_off" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door" method="_on_PhysicsButton_button_off"]
 [connection signal="button_off" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door2" method="_on_PhysicsButton_button_off"]
-[connection signal="button_on" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door" method="_on_PhysicsButton_button_on"]
+[connection signal="button_off" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door" method="_on_PhysicsButton_button_off"]
 [connection signal="button_on" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door2" method="_on_PhysicsButton_button_on"]
-[connection signal="button_off" from="World/ButtonsAndDoors/Group3/PhysicsButton" to="World/ButtonsAndDoors/Group3/Door2" method="_on_PhysicsButton_button_off"]
+[connection signal="button_on" from="World/ButtonsAndDoors/Group2/PhysicsButton" to="World/ButtonsAndDoors/Group2/Door" method="_on_PhysicsButton_button_on"]
 [connection signal="button_off" from="World/ButtonsAndDoors/Group3/PhysicsButton" to="World/ButtonsAndDoors/Group3/Door" method="_on_PhysicsButton_button_off"]
-[connection signal="button_on" from="World/ButtonsAndDoors/Group3/PhysicsButton" to="World/ButtonsAndDoors/Group3/Door2" method="_on_PhysicsButton_button_on"]
+[connection signal="button_off" from="World/ButtonsAndDoors/Group3/PhysicsButton" to="World/ButtonsAndDoors/Group3/Door2" method="_on_PhysicsButton_button_off"]
 [connection signal="button_on" from="World/ButtonsAndDoors/Group3/PhysicsButton" to="World/ButtonsAndDoors/Group3/Door" method="_on_PhysicsButton_button_on"]
+[connection signal="button_on" from="World/ButtonsAndDoors/Group3/PhysicsButton" to="World/ButtonsAndDoors/Group3/Door2" method="_on_PhysicsButton_button_on"]
 [connection signal="body_entered" from="Milk/MilkArea" to="Milk/MilkSploosh" method="_on_MilkArea_body_entered"]
