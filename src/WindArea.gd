@@ -15,8 +15,6 @@ func _ready():
 	if not Engine.editor_hint:
 		var extents = shape_ref.shape.extents
 		extents = set_extents
-		print(set_extents)
-		print(extents)
 		particles_ref.emission_rect_extents.y = extents.x
 		particles_ref.position.y = extents.y - 8
 		particles_ref.lifetime = 0.37/20 * extents.y
