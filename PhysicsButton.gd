@@ -9,6 +9,7 @@ var pressers := []
 
 
 onready var sprite := $AnimatedSprite
+onready var sound := $AudioStreamPlayer
 
 
 func _on_PhysicsButton_body_entered(body):
@@ -16,6 +17,7 @@ func _on_PhysicsButton_body_entered(body):
 		pressers.append(body)
 		if sprite.frame == 0:
 			sprite.frame = 1
+			sound.play()
 			emit_signal("button_on")
 
 func _on_PhysicsButton_body_exited(body):

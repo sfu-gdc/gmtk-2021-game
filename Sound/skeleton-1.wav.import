@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/skeleton-1.wav-a46026eed27dfb0643405ddce609ae00.sample"
+
+[deps]
+
+source_file="res://Sound/skeleton-1.wav"
+dest_files=[ "res://.import/skeleton-1.wav-a46026eed27dfb0643405ddce609ae00.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=true
+compress/mode=0

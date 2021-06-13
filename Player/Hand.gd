@@ -12,6 +12,7 @@ var grab_points := []
 
 onready var world = get_tree().get_root().get_children()[-1]
 onready var head := $"../Head"
+onready var sound := $"../GrabSound"
 
 
 func _physics_process(delta):
@@ -27,6 +28,7 @@ func _physics_process(delta):
 			grab_point.node_b = body.get_path()
 			world.add_child(grab_point)
 			grab_points.append(grab_point)
+			sound.play()
 	if Input.is_action_just_released("grab"):
 		for grab_point in grab_points:
 			grab_point.queue_free()

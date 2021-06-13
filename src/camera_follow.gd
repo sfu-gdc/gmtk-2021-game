@@ -10,6 +10,9 @@ func _ready():
 	tracking_offset = Vector2(4, 4) + Vector2(0, 8);
 	
 func _process(delta):
+	if Input.is_action_just_pressed("restart"):
+		get_tree().reload_current_scene()
+	
 	var target = (player_body_ref.position) - self.get_camera_position()
 	var translate = null
 	if only_y:

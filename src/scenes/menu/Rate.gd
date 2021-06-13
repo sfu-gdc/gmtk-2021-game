@@ -17,4 +17,5 @@ func _ready():
 
 
 func _on_Rate_pressed():
+# warning-ignore:return_value_discarded
 	OS.shell_open("https://www.youtube.com/watch?v=eugo6bM-c-U")

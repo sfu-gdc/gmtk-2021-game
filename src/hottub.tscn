@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
+[ext_resource path="res://Sound/Ending.wav" type="AudioStream" id=1]
 [ext_resource path="res://src/WorldTileset.tres" type="TileSet" id=2]
 [ext_resource path="res://Player/PlayerShades.tscn" type="PackedScene" id=3]
 [ext_resource path="res://ParallaxBackground.tscn" type="PackedScene" id=4]
@@ -241,3 +242,8 @@ script = ExtResource( 6 )
 [node name="Camera2D" type="Camera2D" parent="."]
 current = true
 zoom = Vector2( 1.5, 1.5 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 1 )
+volume_db = -15.0
+autoplay = true

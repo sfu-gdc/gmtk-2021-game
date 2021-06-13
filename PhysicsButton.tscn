@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://res/images/button_images.png" type="Texture" id=1]
 [ext_resource path="res://PhysicsButton.gd" type="Script" id=2]
+[ext_resource path="res://Sound/button_no_blurt.wav" type="AudioStream" id=3]
 
 [sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 1 )
@@ -31,5 +32,9 @@ frames = SubResource( 3 )
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2( 0, -2 )
 shape = SubResource( 4 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
+volume_db = -10.0
 [connection signal="body_entered" from="." to="." method="_on_PhysicsButton_body_entered"]
 [connection signal="body_exited" from="." to="." method="_on_PhysicsButton_body_exited"]
