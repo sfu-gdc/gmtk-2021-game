@@ -14,6 +14,6 @@ data_*/
 .DS_Store
 
 # binaries
-bin/windows
+bin/win
 bin/mac
 bin/linux

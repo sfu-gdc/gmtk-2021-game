@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/sponge_grab.mp3-a6487211aa3d784ba922b6781a7fe528.mp3str"
+
+[deps]
+
+source_file="res://Sound/sponge_grab.mp3"
+dest_files=[ "res://.import/sponge_grab.mp3-a6487211aa3d784ba922b6781a7fe528.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0

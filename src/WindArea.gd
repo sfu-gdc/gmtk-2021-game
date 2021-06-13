@@ -1,9 +1,7 @@
 tool
 extends Area2D
 
-
 export var set_extents := Vector2(32, 64)
-
 
 onready var particles_ref: CPUParticles2D = get_node("CPUParticles2D")
 onready var shape_ref: CollisionShape2D = $CollisionShape2D
