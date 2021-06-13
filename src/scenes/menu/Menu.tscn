@@ -115,9 +115,8 @@ position = Vector2( 489.774, 283.553 )
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 15 )
-volume_db = -19.637
+volume_db = -15.0
 autoplay = true
-
 [connection signal="pressed" from="Buttons/Play" to="Buttons/Play" method="_on_Play_pressed"]
 [connection signal="pressed" from="Buttons/Rate" to="Buttons/Rate" method="_on_Rate_pressed"]
 [connection signal="pressed" from="Buttons/Quit" to="Buttons/Quit" method="_on_Quit_pressed"]

@@ -12,8 +12,11 @@ var grab_points := []
 
 onready var world = get_tree().get_root().get_children()[-1]
 onready var head := $"../Head"
-onready var sound := $"../GrabSound"
+var sound
 
+func _ready():
+	if get_tree().get_root().get_children()[0].name == "Main":
+		sound = $"../GrabSound"
 
 func _physics_process(delta):
 	# Make hand chase cursor
