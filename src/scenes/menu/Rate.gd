@@ -17,4 +17,4 @@ func _ready():
 
 
 func _on_Rate_pressed():
-	OS.shell_open("https://www.youtube.com/watch?v=eugo6bM-c-U")
+	OS.shell_open("https://earthensky.itch.io/skeletied")
