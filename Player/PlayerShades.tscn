@@ -223,9 +223,8 @@ flip_h = true
 script = ExtResource( 15 )
 
 [node name="Sprite2" type="Sprite" parent="Head"]
-visible = false
 position = Vector2( 0, -3.8 )
-scale = Vector2( -3.8, 3.8 )
+scale = Vector2( 3.8, 3.8 )
 texture = ExtResource( 17 )
 script = ExtResource( 18 )
 
